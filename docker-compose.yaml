@@ -2,7 +2,7 @@ version: "3"
 
 services:
   node:
-    image: node:latest
+    image: node:20-alpine
     container_name: node
     stdin_open: true
     tty: true
@@ -10,7 +10,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
-    command: /bin/sh -c "cd /app && npm install && npm run dev"
+    command: /bin/sh -c "cd /app && npm ci && npm run dev"
   database:
     image: postgres:latest
     container_name: database
