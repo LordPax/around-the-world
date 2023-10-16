@@ -11,6 +11,10 @@ export default (sequelize) => {
                 autoIncrement: true,
                 allowNull: false,
             },
+            code: {
+                type: DataTypes.STRING(50),
+                allowNull: false,
+            },
             firstname: {
                 type: DataTypes.STRING(50),
                 allowNull: true,
