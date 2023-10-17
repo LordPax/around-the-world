@@ -1,5 +1,6 @@
 import express from 'express';
 import mainRouter from './route/main.js';
+import cardRouter from './route/card.js';
 
 const app = express();
 app.use((req, res, next) => {
@@ -15,6 +16,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use(mainRouter);
+app.use('/card', cardRouter);
 app.use('/assets', express.static('public'));
 
 const PORT = process.env.PORT || 3000;
